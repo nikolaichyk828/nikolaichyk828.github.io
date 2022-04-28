@@ -6,7 +6,8 @@ nav{
     width: 100%;
     height: 60px;
     background: #344051;
-    position: fixed
+    position: fixed;
+    z-index: 10;
     }   
 main{
     width: 100%;
@@ -15,9 +16,8 @@ main{
 
 .logo{
     color: #fff;
-    font-size: 38px;
+    font-size: 39px;
     line-height: 60px;
-    padding-left: 388px;
     float: left;
     -webkit-animation: comming 2s;
     -o-animation: comming 2s;
@@ -26,20 +26,22 @@ main{
 
 .menu{
     float: left;
-    padding-left: 432px; 
+    font-family: 'Square Peg', cursive;
+        
 }
 .menu li{
     float: left;
     line-height: 60px;
     color: #fff;
     margin-right: 40px;
-    font-size: 19px;
+    font-size: 13px;
     text-transform: uppercase;
     -webkit-animation: topshift 0.4s ;
     -o-animation: topshift 0.4s;
     animation: topshift 0.4; 
    
 }
+
 .main{
     width: 100%;
     height:100%;
@@ -47,11 +49,10 @@ main{
     }
 .title__container{
     float: left;
-    margin: 332px 0px 0px 310px;
     color: #2c384a;
     text-align: center;
     opacity: 0;
-     -webkit-animation: titlemove 1s ease forwards;
+    -webkit-animation: titlemove 1s ease forwards;
     -o-animation: titlemove 1s ease forwards;
     animation: titlemove 1s ease forwards;
     -webkit-animation-delay: 1s;
@@ -59,14 +60,17 @@ main{
     animation-delay: 1s;
 }
 .title__container h1{
-    font-size: 60px;
-    font-weight: bold; 
-    
+    font-size: 55px;
+    font-weight:600;
+        
 }
 .title__container h4{
     margin-top: 40px;
-    font-size: 22px;
+    font-size: 28px;
     color: #79818d;
+}
+.title__container svg{
+    color: orange
 }
 
  .title__container input{
@@ -104,7 +108,7 @@ main{
     transition: all 0.2s;
 }
 .title__container input:hover{
-    background: #344051;
+    background: orange;
     color: white;
 }
 
@@ -151,7 +155,37 @@ main{
     }
     to{
         opacity: 1;
-        margin-left: 310px;
+        margin-left: 35px;
+    }
+}
+
+
+@media(max-width: 991px){
+     .title__container, .title__container h4, .title__container input{
+        color: white;
+        position: relative;
+        z-index: 3;
+    }
+    
+    .white-btn:visited{
+    color: white;
+        }
+    
+    .main{
+        position: relative;
+    }
+    
+    .main::after{
+        content:"";
+        bottom:0;
+        top: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        background: rgba(0,0,0,0.4);
+        z-index: 1;
+        
+        
     }
 }
 
@@ -164,28 +198,25 @@ main{
     color: #000;
     font-weight: bold; 
     text-align: center;
-    margin-top: 0px;
-    text-transform: uppercase;
     padding: 50px 0px 0px 0px;
 } 
 
 .item_skills1 h2:hover{
     color: orange;
-    font-size: 30px
+    font-size: 30px;
+    
 }
 
 .item_skills1 img{
-    width: 10%;
-    height: 28%;
-    border-radius: 50%;
-    overflow: hidden;
     margin: 70px 860px 20px 860px
 }
 
 .item_skills1 p{
+    font-size: 28px;
     text-align: center;
-    margin: 0px 600px 30px 600px;
+    
     color: #000;
+    font-family: 'Square Peg', cursive;
 }
 .item_skills1 input{
     height: 40px;
@@ -196,7 +227,8 @@ main{
     color: #000;
     font-size: 13px;
     padding: 0px 16px;
-    margin: 0px 880px 80px 880px
+    background: none;
+    
 }
 .item_skills1 input{
     transition: all 0.2s;
@@ -208,7 +240,7 @@ main{
 
 .block2{
     width: 100%;
-    height: 600px; 
+    height:100%;
     background: url(..//img/fons1.jpg) center/cover no-repeat
 }
 .item_skills2 h2{
@@ -225,20 +257,25 @@ main{
     color: orange;
     font-size: 30px
 }    
-.item_skills2 p{
+.item_skills2 li{
+    line-height: 60px;
+    color: #fff;
+    margin-right: 40px;
     float: left;
     line-height: 60px;
     color: orange;
-    margin: 20px 150px 0px 150px;
-    font-size: 19px;
+    font-size: 22px;
     text-transform: uppercase
+}
+.item_skills2 svg{
+    color: white;
+    width:35px;
+    height:35px;
 }
 
 
-.block3{
-    width: 100%;
-    height: 1100px; 
-} 
+ 
+
 .item_skills3 h2{
     font-size: 28px;
     color: #000;
@@ -247,81 +284,84 @@ main{
     margin: 0px;
     text-transform: uppercase;
     padding: 50px
+    
 }
 .item_skills3 h2:hover{
     color: orange;
     font-size: 30px
 } 
 
-.item_skills3 p{
-    text-align: center;
-    margin: 0px 0px 00px 0px;
-    color: #000
-}
-.item_skills3 img{
-    overflow: hidden;
-    margin: 24px 20%
-}
+  
 .item_skills3 h4{
     font-size: 18px;
     color: orange;
     font-weight: bold; 
-    text-transform: none
+    
+}
+
+.item_skills3 span, p{
+    font-size: 18px; 
+}
+
+.item_skills3 img{
+    width: 50%;
+    height:50%;
+}
+
+.item_skills3 img:hover{
+    width: 90%;
+    height:90%;
 }
 
 
-.block4{
-    width: 100%;
-    height: 500px;
-}
 .item_skills4 h2{
     font-size: 28px;
     color: #000;
     font-weight: bold; 
     text-align: center;
-    margin: 0px;
-    text-transform: none;
-    padding: 50px
+    padding: 50px       
 }
+
 .item_skills4 h2:hover{
     color: orange;
     font-size: 30px
 } 
 .item_skills4 h4{
     font-size: 18px;
-    color: #000;
+    color: orange;
     font-weight: bold; 
-    margin-left: 280px;
+    padding: 10px;
     text-transform: uppercase;
-    padding: 20px
+    padding: 10px;
+    
 }
 .item_skills4 select{
-    font-size: 12px;
-    color: #1119;
+    font-size: 18px;
+    color: #344051;
     font-weight: normal;
     text-align: left;
-    margin-left: 300px;
+    margin-left: 0px;
     width: 1220px;
-    height: 40px
+    height: 40px;
 }
 
 
 .block5{
     width: 100%;
-    height: 500px;
+    height:100%;
     background: url(..//img/fons2.jpg) center/cover no-repeat;
 }
 .item_skills5 h2{
     font-size: 28px;
-    color: orange;
+    color: black;
     font-weight: bold; 
     text-align: center;
     margin: 0px;
-    text-transform: none;
-    padding: 50px;
+    text-transform: uppercase;
+    padding: 50px
 }
 .item_skills5 h2:hover{
-    color: #344051;
+    color: orange;
     font-size: 30px
 } 
 .item_skills5 .text{
@@ -329,16 +369,21 @@ main{
     line-height: 60px;
     color: orange;
     font-weight: bold;
-    margin: 20px 0px 0px 150px;
     font-size: 19px;
-    text-transform: uppercase
+    text-transform: uppercase;
+    padding: 35px
+}
+
+ 
+.item_skills5 svg{
+    color: black;
+    width:35px;
+    height:35px;
+    
 }
 
 
-.block6{
-    width: 100%;
-    height: 500px;
-}
+
 .item_skills6 h2{
     font-size: 28px;
     color: black;
@@ -346,7 +391,7 @@ main{
     text-align: center;
     margin: 0px;
     text-transform: none;
-    padding: 50px;
+    padding: 10px; 0px, 0px, 0px
 }
 .item_skills6 h2:hover{
     color: orange;
@@ -357,24 +402,28 @@ main{
     height: 28%;
     border-radius: 50%;
     overflow: hidden;
-    margin: 10px 860px 20px 860px
-}
+    
+ }
 .item_skills6 p{
-    font-size: 15px;
+    font-size: 18px;
     color: black;
     font-weight: normal;
     text-align: center;
-    margin: 10px 600px 30px 600px;
+    font-family: 'Square Peg', cursive;
+    
 }
 .item_skills6 span{
-    font-size: 15px;
+    font-size: 18px;
     color: black;
     font-weight: bold;
 }
 
+
+
+
+
+
 .block7{
-    width: 100%;
-    height: 700px;
     background: url(..//img/fons3.jpg) center/cover no-repeat;
     
 }
@@ -383,7 +432,6 @@ main{
     color: #fff;
     font-weight: bold; 
     text-align: center;
-    margin: 0px;
     text-transform: none;
     padding: 50px;
  }
@@ -396,33 +444,31 @@ main{
     color: #fff;
     font-weight: bold;
     text-align: center;
-    margin: 10px;
-    padding: 8px 50px 10px 10px;
+    
 }
 .item_skills7 .text{
-    float: left;
     line-height: 60px;
     color: orange;
     font-weight: bold;
-    margin: 0px 100px 0px 250px;
+    float: center;
     font-size: 19px;
     text-transform: none;
+    text-align: center;
+       
 }
 .item_skills7 h3{
     font-size: 22px;
-    color: #344051;
-    text-align: left;
+    color: black;
     font-weight: bold;
-    margin: 0px;
-    padding: 0px 600px 10px 830px ;
-    float: left
 }
 .item_skills7 input{
-    padding: 10px 200px;
-    margin:  10px 700px;
-    font-size: 12px;
+    font-size: 13px;
     text-align: left;
-    float: left;
+    float: center;
+}
+.item_skills7 label{
+    width: 0px;
+    height: 0px;
 }
 .item_skills7 input{
     transition: all 0.2s;
@@ -432,18 +478,25 @@ main{
     color: white;
 }
 .item_skills7 textarea{
-    padding: 10px 117px;
-    margin:  10px 700px;
-    font-size: 12px;
+    font-size: 13px;
+    transition: all 0.2s;
+ }   
+.item_skills7 textarea:hover{
+    background: orange;
+    color: white;
 }
+.item_skills7 click{
+    
+} 
 footer{
     width: 100%;
-    height: 50px; 
+    height: 54px; 
     background: #344051;
-    font-size: 18px;
+    font-size: 25px;
     color: #fff;
     text-align: center;
-    padding-top:  15px 
+    padding-top:  15px;
+    font-family: 'Square Peg', cursive;
     
 }
    
